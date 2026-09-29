@@ -1,0 +1,127 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --color-ink: #0f0816;
+  --color-night: #1a0f24;
+  --color-plum: #2a1638;
+  --color-velvet: #3d1f4f;
+  --color-saffron: #e8a33d;
+  --color-ember: #f07a2e;
+  --color-rose: #d9577a;
+  --color-sand: #f3e7d3;
+  --color-dune: #cdb89a;
+  --font-display: 'Bodoni Moda', 'Didot', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-arabic: 'Amiri', serif;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-sand);
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(232, 163, 61, 0.12), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(217, 87, 122, 0.1), transparent 60%),
+    var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Film grain overlay for a tactile, editorial feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--color-saffron);
+  color: var(--color-ink);
+}
+
+/* Mihrab arch — the signature shape of the brand */
+.arch {
+  border-radius: 999px 999px 1.25rem 1.25rem;
+}
+
+.gold-text {
+  background: linear-gradient(100deg, #f7d58b 0%, #e8a33d 40%, #f07a2e 70%, #f7d58b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-160px) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.smoke {
+  animation: smoke 7s ease-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .gold-text,
+  .smoke,
+  .rise {
+    animation: none;
+  }
+}
