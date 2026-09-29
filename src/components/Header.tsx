@@ -18,7 +18,7 @@ export function Logo({ className = '' }: { className?: string }) {
         <span className="h-2 w-2 rounded-full bg-saffron shadow-[0_0_12px_3px_rgba(232,163,61,0.7)] transition group-hover:scale-125" />
       </span>
       <span className="font-display text-xl tracking-wide md:text-2xl">
-        Noor <span className="italic text-saffron">&amp;</span> Oud
+        Mushk <span className="italic text-saffron"> e </span> Zimal
       </span>
     </Link>
   )
