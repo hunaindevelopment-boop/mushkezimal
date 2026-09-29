@@ -13,7 +13,7 @@ const nav = [
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <Link to="/" className={`group flex items-center gap-2.5 ${className}`} aria-label="Mush e Zimal home">
+    <Link to="/" className={`group flex items-center gap-2.5 ${className}`} aria-label="Mushk e Zimal home">
       <span className="arch relative grid h-9 w-7 place-items-center border border-saffron/70 bg-gradient-to-b from-saffron/25 to-transparent">
         <span className="h-2 w-2 rounded-full bg-saffron shadow-[0_0_12px_3px_rgba(232,163,61,0.7)] transition group-hover:scale-125" />
       </span>
