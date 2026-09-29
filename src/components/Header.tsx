@@ -13,7 +13,7 @@ const nav = [
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <Link to="/" className={`group flex items-center gap-2.5 ${className}`} aria-label="Noor & Oud home">
+    <Link to="/" className={`group flex items-center gap-2.5 ${className}`} aria-label="Mush e Zimal home">
       <span className="arch relative grid h-9 w-7 place-items-center border border-saffron/70 bg-gradient-to-b from-saffron/25 to-transparent">
         <span className="h-2 w-2 rounded-full bg-saffron shadow-[0_0_12px_3px_rgba(232,163,61,0.7)] transition group-hover:scale-125" />
       </span>
@@ -42,9 +42,8 @@ export default function Header() {
         Free shipping over $120 · Complimentary attar sample with every order
       </div>
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrolled ? 'border-b border-white/10 bg-ink/80 backdrop-blur-xl' : 'bg-transparent'
-        }`}
+        className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'border-b border-white/10 bg-ink/80 backdrop-blur-xl' : 'bg-transparent'
+          }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
           <button
@@ -101,9 +100,8 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         />
         <aside
-          className={`absolute inset-y-0 left-0 flex w-80 max-w-[85%] flex-col bg-night p-6 transition-transform duration-300 ${
-            menuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+          className={`absolute inset-y-0 left-0 flex w-80 max-w-[85%] flex-col bg-night p-6 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : '-translate-x-full'
+            }`}
         >
           <div className="mb-10 flex items-center justify-between">
             <Logo />
